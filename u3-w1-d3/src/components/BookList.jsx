@@ -16,7 +16,7 @@ class BookList extends Component {
   render() {
     return (
       <Container fluid className="p-3 dimensione">
-        <Container className="mt-3">
+        <Container>
           <Form onSubmit={this.handleSub}>
             <Form.Group className="mb-3">
               <Form.Label>Search Your Book</Form.Label>
@@ -43,7 +43,9 @@ class BookList extends Component {
               {this.props.books
                 .filter((book) => book.title.toLowerCase().includes(this.state.bookName.toLowerCase()))
                 .map((book) => (
-                  <Col>{SingleBook(book)}</Col>
+                  <Col key={book.asin}>
+                    <SingleBook img={book.img} title={book.title} category={book.category} price={book.price} />
+                  </Col>
                 ))}
             </Row>
           </Container>
