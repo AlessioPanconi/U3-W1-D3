@@ -1,0 +1,7 @@
+.dimensione {
+  min-height: calc(100vh - 100px - 100px);
+}
+
+.foot {
+  height: 100px;
+}
