@@ -43,7 +43,7 @@ class BookList extends Component {
               {this.props.books
                 .filter((book) => book.title.toLowerCase().includes(this.state.bookName.toLowerCase()))
                 .map((book) => (
-                  <Col>{<BookList img={book.img} title={book.title} category={book.category} price={book.price} />}</Col>
+                  <Col>{SingleBook(book)}</Col>
                 ))}
             </Row>
           </Container>
